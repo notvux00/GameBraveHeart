@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1715262886 source:c:\users\admin\desktop\brave heart\main.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<iostream>
+	<vector>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"defs.h"
+	"graphics.h"
+	"character.h"
+	"bullet.h"
+	"highscore.h"
+
+1715262714 c:\users\admin\desktop\brave heart\defs.h
+
+1715050336 c:\users\admin\desktop\brave heart\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	"defs.h"
+	<vector>
+
+1715262477 c:\users\admin\desktop\brave heart\character.h
+	<cmath>
+	<SDL.h>
+	"bullet.h"
+
+1715262559 c:\users\admin\desktop\brave heart\bullet.h
+	<SDL.h>
+	"defs.h"
+
+1715262477 c:\users\admin\desktop\brave heart\highscore.h
+	<string>
+	<vector>
+	<fstream>
+	<algorithm>
+
