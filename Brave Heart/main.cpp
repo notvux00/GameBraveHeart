@@ -35,6 +35,10 @@ int main(int argc, char* args[]) {
     SDL_Texture* character = graphics.loadTexture("assets/img/player.png");
     SDL_Texture* bullett = graphics.loadTexture("assets/img/bullet.png");
     SDL_Texture* trapTexture = graphics.loadTexture(TRAP_SPRITE_FILE);
+    SDL_Texture* wallTop = graphics.loadTexture("assets/img/wallTop.png");
+    SDL_Texture* wallBottom = graphics.loadTexture("assets/img/wallBottom.png");
+    SDL_Texture* wallLeft = graphics.loadTexture("assets/img/wallLeft.png");
+    SDL_Texture* wallRight = graphics.loadTexture("assets/img/wallRight.png");
 
     Character player;
     player.x = 600;
@@ -159,6 +163,50 @@ int main(int argc, char* args[]) {
                 }
 
                 graphics.prepareScene(background);
+                if (score >= 30 && score <=45) {
+                    graphics.renderTexture(wallTop, 0,0);
+                    graphics.renderTexture(wallBottom, 0,534);
+                    graphics.renderTexture(wallLeft, 0,0);
+                    graphics.renderTexture(wallRight, 1034,0);
+
+                    for (int i = 4; i < NUM_COLLISION_BOXES; ++i) {
+                    if (checkCollisionBox(player.x, player.y, CHARACTER_SIZE, collisionBoxes[i])) {
+                        Mix_HaltMusic();
+                        gameStatus = GAME_OVER;
+                        break;
+                        }
+                    }
+                }
+
+                if (score >= 60 && score <=75) {
+                    graphics.renderTexture(wallTop, 0,0);
+                    graphics.renderTexture(wallBottom, 0,534);
+                    graphics.renderTexture(wallLeft, 0,0);
+                    graphics.renderTexture(wallRight, 1034,0);
+
+                    for (int i = 4; i < NUM_COLLISION_BOXES; ++i) {
+                    if (checkCollisionBox(player.x, player.y, CHARACTER_SIZE, collisionBoxes[i])) {
+                        Mix_HaltMusic();
+                        gameStatus = GAME_OVER;
+                        break;
+                        }
+                    }
+                }
+
+                if (score >= 100) {
+                    graphics.renderTexture(wallTop, 0,0);
+                    graphics.renderTexture(wallBottom, 0,534);
+                    graphics.renderTexture(wallLeft, 0,0);
+                    graphics.renderTexture(wallRight, 1034,0);
+
+                    for (int i = 4; i < NUM_COLLISION_BOXES; ++i) {
+                    if (checkCollisionBox(player.x, player.y, CHARACTER_SIZE, collisionBoxes[i])) {
+                        Mix_HaltMusic();
+                        gameStatus = GAME_OVER;
+                        break;
+                        }
+                    }
+                }
                 graphics.renderTexture(Score, 10, 10);
                 SDL_DestroyTexture(Score);
 
@@ -207,7 +255,7 @@ int main(int argc, char* args[]) {
                     }
                 }
 
-                for (int i = 0; i < NUM_COLLISION_BOXES; ++i) {
+                for (int i = 0; i < 4; ++i) {
                     if (checkCollisionBox(player.x, player.y, CHARACTER_SIZE, collisionBoxes[i])) {
                         Mix_HaltMusic();
                         gameStatus = GAME_OVER;
@@ -290,6 +338,10 @@ int main(int argc, char* args[]) {
     SDL_DestroyTexture(character);
     SDL_DestroyTexture(bullett);
     SDL_DestroyTexture(trapTexture);
+    SDL_DestroyTexture(wallTop);
+    SDL_DestroyTexture(wallBottom);
+    SDL_DestroyTexture(wallLeft);
+    SDL_DestroyTexture(wallRight);
 
     TTF_CloseFont(font);
 

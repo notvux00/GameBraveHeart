@@ -20,12 +20,17 @@ struct Character {
     }
 };
 
-const int NUM_COLLISION_BOXES = 4;
+const int NUM_COLLISION_BOXES = 8;
 SDL_Rect collisionBoxes[NUM_COLLISION_BOXES] = {
     {100, 200, 50, 50},
     {250, 450, 50, 50},
     {1000, 150, 50, 50},
     {1100, 400, 50, 50},
+
+    {0, 0, 1200, 110},//top
+    {0, 590, 1200, 110},//bot
+    {0, 0, 110, 700},//left
+    {1090, 0, 110, 700}//right
 };
 
 bool checkCollision(float characterX, float characterY, int characterSize, float bulletX, float bulletY, int bulletSize) {
