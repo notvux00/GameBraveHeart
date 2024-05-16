@@ -162,7 +162,7 @@ int main(int argc, char* args[]) {
                     bulletSpeed = 12;
                 }
 
-                if (score >= 90 && score > 120) {
+                if (score >= 90) {
                     bulletSpeed = 14;
                 }
 
