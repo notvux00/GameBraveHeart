@@ -154,12 +154,16 @@ int main(int argc, char* args[]) {
 
                 SDL_Texture* Score = graphics.renderText(stringScore.c_str(), font, colorWhite);
 
-                if (score >= 30) {
+                if (score >= 30 && score < 60) {
                     bulletSpeed = 10;
                 }
 
-                if (score >= 60) {
+                if (score >= 60 && score < 90) {
                     bulletSpeed = 12;
+                }
+
+                if (score >= 90 && score > 120) {
+                    bulletSpeed = 14;
                 }
 
                 graphics.prepareScene(background);
