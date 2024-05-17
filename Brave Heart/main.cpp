@@ -288,7 +288,7 @@ int main(int argc, char* args[]) {
                 Highscore newScore;
                 newScore.score = score;
                 highscores.push_back(newScore);
-                std::sort(highscores.begin(), highscores.end(), compareScore);
+                sort(highscores.begin(), highscores.end(), compareScore);
                 if (highscores.size() > 10) {
                     highscores.resize(10);
                 }
