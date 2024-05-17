@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1715784108 source:c:\users\admin\desktop\brave heart\main.cpp
+1715912450 source:c:\users\admin\desktop\brave heart\main.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
@@ -25,7 +25,7 @@
 	"defs.h"
 	<vector>
 
-1715784106 c:\users\admin\desktop\brave heart\character.h
+1715912873 c:\users\admin\desktop\brave heart\character.h
 	<cmath>
 	<SDL.h>
 	"bullet.h"

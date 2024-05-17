@@ -67,6 +67,7 @@ int main(int argc, char* args[]) {
         switch (gameStatus) {
             case MENU:
                 {
+                    SDL_ShowCursor(SDL_ENABLE);
                     while (SDL_PollEvent(&event)) {
                     if (event.type == SDL_QUIT) {
                         quit = true;
@@ -114,6 +115,8 @@ int main(int argc, char* args[]) {
                         }
                     }
 
+                    SDL_ShowCursor(SDL_ENABLE);
+
                     string highScore1= to_string(highscores[0].score);
                     string highScore2 = to_string(highscores[1].score);
                     string highScore3 = to_string(highscores[2].score);
@@ -143,6 +146,8 @@ int main(int argc, char* args[]) {
                         quit = true;
                     }
                 }
+
+                SDL_ShowCursor(SDL_DISABLE);
 
                 int currentSecond = SDL_GetTicks() / 500;
                 if (currentSecond > lastSecond) {
@@ -285,6 +290,7 @@ int main(int argc, char* args[]) {
 
             case GAME_OVER:
                 {
+                SDL_ShowCursor(SDL_ENABLE);
                 Highscore newScore;
                 newScore.score = score;
                 highscores.push_back(newScore);
